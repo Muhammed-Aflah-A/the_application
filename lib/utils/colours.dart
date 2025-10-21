@@ -18,8 +18,13 @@ class AppColor {
   static const personIcon = Colors.blue;
   static const mailIcon = Colors.red;
   static const lockIcon = Colors.pink;
+  static const homeBg = Color(0xFF44444E);
   static const homeAppbar = Color(0xFF37353E);
   static const homeAppbarText = Colors.white;
   static const accountHeader = Color(0xFF37353E);
+  static const themeIcon = Colors.amber;
   static const settingsIcon = Colors.grey;
+  static const cardColor = Color(0xFF715A5A);
+  static const pageIcon = Colors.green;
+  static const moreIconHoriz = Colors.white;
 }

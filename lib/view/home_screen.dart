@@ -15,6 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final theme = context.watch<ThemeProvider>();
     return Scaffold(
+      backgroundColor: AppColor.homeBg,
       appBar: AppBar(
         title: Text(
           "HomeScreen",
@@ -23,14 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
         centerTitle: true,
         backgroundColor: AppColor.homeAppbar,
         foregroundColor: AppColor.homeAppbarText,
-        actions: [
-          IconButton(
-            onPressed: () {
-              theme.toggleTheme();
-            },
-            icon: Icon(theme.isDark ? Icons.brightness_2 : Icons.brightness_6),
-          ),
-        ],
+        actions: [],
       ),
       drawer: Drawer(
         child: ListView(
@@ -42,7 +36,6 @@ class _HomeScreenState extends State<HomeScreen> {
               currentAccountPicture: CircleAvatar(),
             ),
             ListTile(
-              leading: Icon(Icons.person, color: AppColor.personIcon),
               title: Text(
                 "Profile",
                 style: TextStyle(
@@ -51,12 +44,29 @@ class _HomeScreenState extends State<HomeScreen> {
                   fontStyle: FontStyle.italic,
                 ),
               ),
+              leading: Icon(Icons.person, color: AppColor.personIcon),
               onTap: () {
                 Navigator.pushNamed(context, "profile");
               },
             ),
             ListTile(
-              leading: Icon(Icons.settings, color: AppColor.settingsIcon),
+              title: Text(
+                "Theme",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  fontStyle: FontStyle.italic,
+                ),
+              ),
+              leading: Icon(
+                theme.isDark ? Icons.brightness_2 : Icons.brightness_6,
+                color: AppColor.themeIcon,
+              ),
+              onTap: () {
+                theme.toggleTheme();
+              },
+            ),
+            ListTile(
               title: Text(
                 "Settings",
                 style: TextStyle(
@@ -65,9 +75,33 @@ class _HomeScreenState extends State<HomeScreen> {
                   fontStyle: FontStyle.italic,
                 ),
               ),
+              leading: Icon(Icons.settings, color: AppColor.settingsIcon),
               onTap: () {
                 Navigator.pushNamed(context, "settings");
               },
+            ),
+          ],
+        ),
+      ),
+      body: SafeArea(
+        child: ListView(
+          padding: EdgeInsets.all(10),
+          children: [
+            Card(
+              elevation: 2,
+              color: AppColor.cardColor,
+              child: ListTile(
+                leading: Icon(Icons.pages, color: AppColor.pageIcon),
+                title: Text(
+                  "Flutter Fundementals",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: AppColor.normalText,
+                  ),
+                ),
+                onTap: () {},
+                trailing: Icon(Icons.more_horiz, color: AppColor.moreIconHoriz),
+              ),
             ),
           ],
         ),
