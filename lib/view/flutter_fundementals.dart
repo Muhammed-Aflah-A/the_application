@@ -36,11 +36,35 @@ class _Page1State extends State<Page1> {
         ),
         centerTitle: true,
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          increaseButton();
-        },
-        child: Icon(Icons.add),
+      floatingActionButton: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          FloatingActionButton(
+            backgroundColor: AppColor.buttonColor,
+            foregroundColor: Colors.black,
+            shape: RoundedRectangleBorder(
+              side: BorderSide(color: Colors.black, width: 3),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            onPressed: () {
+              increaseButton();
+            },
+            child: Icon(Icons.add),
+          ),
+          SizedBox(height: 10),
+          FloatingActionButton(
+            backgroundColor: AppColor.buttonColor,
+            foregroundColor: Colors.black,
+            shape: RoundedRectangleBorder(
+              side: BorderSide(color: Colors.black, width: 3),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            onPressed: () {
+              decrementButton();
+            },
+            child: Icon(Icons.remove),
+          ),
+        ],
       ),
       body: SafeArea(
         child: Center(
@@ -50,36 +74,76 @@ class _Page1State extends State<Page1> {
               Container(
                 margin: EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  border: Border.all(),
+                  border: Border.all(width: 3),
+                  borderRadius: BorderRadius.circular(10),
                   color: Colors.amber[50],
                 ),
                 child: Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [Text("Column 1"), Text("Column 2")],
+                    children: [
+                      Text(
+                        "Column 1",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        "Column 2",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
               Container(
                 margin: EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  border: Border.all(),
+                  border: Border.all(width: 3),
+                  borderRadius: BorderRadius.circular(10),
                   color: Colors.blue[50],
                 ),
                 child: Center(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [Text("Row 1 "), Text("Row 2")],
+                    children: [
+                      Text(
+                        "Row 1",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
+                      ),
+                      SizedBox(width: 10),
+                      Text(
+                        "Row 2",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
               Container(
                 margin: EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  border: Border.all(),
+                  border: Border.all(width: 3),
+                  borderRadius: BorderRadius.circular(10),
                   color: Colors.blueGrey[50],
                 ),
-                child: Center(child: Text("Count = $num")),
+                child: Center(
+                  child: Text(
+                    "Count = $num",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                  ),
+                ),
               ),
             ],
           ),
