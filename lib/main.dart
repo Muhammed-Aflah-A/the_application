@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:the_app/notifier/login_provider.dart';
 import 'package:the_app/notifier/register_provider.dart';
 import 'package:the_app/notifier/theme_provider.dart';
+import 'package:the_app/view/flutter_fundementals.dart';
 import 'package:the_app/view/home_screen.dart';
 import 'package:the_app/view/login_screen.dart';
 import 'package:the_app/view/profile.dart';
@@ -46,6 +47,7 @@ class _MyAppState extends State<MyApp> {
         "home_screen": (context) => HomeScreen(),
         "profile": (context) => Profile(),
         "settings": (context) => Settings(),
+        "flutter_fundementals": (context) => Page1(),
       },
     );
   }

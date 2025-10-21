@@ -22,8 +22,8 @@ class _HomeScreenState extends State<HomeScreen> {
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
-        backgroundColor: AppColor.homeAppbar,
-        foregroundColor: AppColor.homeAppbarText,
+        backgroundColor: AppColor.appbar,
+        foregroundColor: AppColor.appbarText,
         actions: [],
       ),
       drawer: Drawer(
@@ -99,7 +99,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: AppColor.normalText,
                   ),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, "flutter_fundementals");
+                },
                 trailing: Icon(Icons.more_horiz, color: AppColor.moreIconHoriz),
               ),
             ),
