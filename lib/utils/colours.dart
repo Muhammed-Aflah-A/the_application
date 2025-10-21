@@ -12,13 +12,12 @@ class AppColor {
   static const loginText = Colors.white;
   static const textFeildColor = Colors.white;
   static const textFeildHint = Colors.grey;
-  static const textFeildFloatingLabel = Colors.grey;
   static const visibilityButton = Colors.grey;
   static const textFeildBorder = Colors.black;
-  static const registerPageBg = Colors.grey;
-  static const registerText = Colors.black;
+  static const registerText = Colors.white;
   static const personIcon = Colors.blue;
   static const mailIcon = Colors.red;
-  static const phoneIcon = Colors.green;
   static const lockIcon = Colors.pink;
+  static const appbarHome = Colors.black;
+  static const appbarHomeText = Colors.white;
 }

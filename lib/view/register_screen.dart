@@ -42,7 +42,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           style: TextStyle(
                             fontFamily: "LoginText2",
                             fontSize: 50,
-                            color: AppColor.loginText,
+                            color: AppColor.registerText,
                           ),
                         ),
                         SizedBox(height: 10),
@@ -50,10 +50,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           decoration: InputDecoration(
                             hintText: "Full Name",
                             hintStyle: TextStyle(color: AppColor.textFeildHint),
-                            floatingLabelStyle: TextStyle(
-                              color: AppColor.textFeildFloatingLabel,
-                              fontWeight: FontWeight.bold,
-                            ),
                             prefixIcon: Icon(
                               Icons.person,
                               color: AppColor.personIcon,
@@ -98,10 +94,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           decoration: InputDecoration(
                             hintText: "Gmail",
                             hintStyle: TextStyle(color: AppColor.textFeildHint),
-                            floatingLabelStyle: TextStyle(
-                              color: AppColor.textFeildFloatingLabel,
-                              fontWeight: FontWeight.bold,
-                            ),
                             prefixIcon: Icon(
                               Icons.mail,
                               color: AppColor.mailIcon,
@@ -150,10 +142,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           decoration: InputDecoration(
                             hintText: "Password",
                             hintStyle: TextStyle(color: AppColor.textFeildHint),
-                            floatingLabelStyle: TextStyle(
-                              color: AppColor.textFeildFloatingLabel,
-                              fontWeight: FontWeight.bold,
-                            ),
                             prefixIcon: Icon(
                               Icons.lock,
                               color: AppColor.lockIcon,
@@ -222,10 +210,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           decoration: InputDecoration(
                             hintText: "Confirm password",
                             hintStyle: TextStyle(color: AppColor.textFeildHint),
-                            floatingLabelStyle: TextStyle(
-                              color: AppColor.textFeildFloatingLabel,
-                              fontWeight: FontWeight.bold,
-                            ),
                             prefixIcon: Icon(
                               Icons.lock,
                               color: AppColor.lockIcon,

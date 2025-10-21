@@ -50,10 +50,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           decoration: InputDecoration(
                             hintText: "Email",
                             hintStyle: TextStyle(color: AppColor.textFeildHint),
-                            floatingLabelStyle: TextStyle(
-                              color: AppColor.textFeildFloatingLabel,
-                              fontWeight: FontWeight.bold,
-                            ),
                             prefixIcon: Icon(
                               Icons.mail,
                               color: AppColor.mailIcon,
@@ -101,10 +97,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           decoration: InputDecoration(
                             hintText: "Password",
                             hintStyle: TextStyle(color: AppColor.textFeildHint),
-                            floatingLabelStyle: TextStyle(
-                              color: AppColor.textFeildFloatingLabel,
-                              fontWeight: FontWeight.bold,
-                            ),
                             prefixIcon: Icon(
                               Icons.lock,
                               color: AppColor.lockIcon,
