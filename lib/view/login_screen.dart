@@ -66,12 +66,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                 width: 2,
                               ),
                             ),
-                            // focusedBorder: OutlineInputBorder(
-                            //   borderSide: BorderSide(
-                            //     color: AppColor.textFeildBorder,
-                            //     width: 2,
-                            //   ),
-                            // ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: AppColor.textFeildBorder,
+                                width: 2,
+                              ),
+                            ),
                           ),
                           keyboardType: TextInputType.emailAddress,
                           validator: (value) {
@@ -128,12 +128,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                 width: 2,
                               ),
                             ),
-                            // focusedBorder: OutlineInputBorder(
-                            //   borderSide: BorderSide(
-                            //     color: AppColor.textFeildBorder,
-                            //     width: 2,
-                            //   ),
-                            // ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: AppColor.textFeildBorder,
+                                width: 2,
+                              ),
+                            ),
                           ),
                           obscureText: loginForm.obscurePassword,
                           validator: (value) {

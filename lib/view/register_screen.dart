@@ -66,12 +66,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 width: 2,
                               ),
                             ),
-                            // focusedBorder: OutlineInputBorder(
-                            //   borderSide: BorderSide(
-                            //     color: AppColor.textFeildBorder,
-                            //     width: 2,
-                            //   ),
-                            // ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: AppColor.textFeildBorder,
+                                width: 2,
+                              ),
+                            ),
                           ),
                           validator: (value) {
                             value = value?.replaceAll("  ", " ").trim();
@@ -114,12 +114,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 width: 2,
                               ),
                             ),
-                            // focusedBorder: OutlineInputBorder(
-                            //   borderSide: BorderSide(
-                            //     color: AppColor.textFeildBorder,
-                            //     width: 2,
-                            //   ),
-                            // ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: AppColor.textFeildBorder,
+                                width: 2,
+                              ),
+                            ),
                           ),
                           keyboardType: TextInputType.emailAddress,
                           validator: (value) {
@@ -138,56 +138,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             registerForm.gmail = newValue;
                           },
                           focusNode: registerForm.gmailFocus,
-                          textInputAction: TextInputAction.next,
-                          onFieldSubmitted: (value) {
-                            FocusScope.of(
-                              context,
-                            ).requestFocus(registerForm.phoneNumberFocus);
-                          },
-                        ),
-                        SizedBox(height: 20),
-                        TextFormField(
-                          decoration: InputDecoration(
-                            hintText: "Phone number",
-                            hintStyle: TextStyle(color: AppColor.textFeildHint),
-                            floatingLabelStyle: TextStyle(
-                              color: AppColor.textFeildFloatingLabel,
-                              fontWeight: FontWeight.bold,
-                            ),
-                            prefixIcon: Icon(
-                              Icons.phone,
-                              color: AppColor.phoneIcon,
-                            ),
-                            filled: true,
-                            fillColor: AppColor.textFeildColor,
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: AppColor.textFeildBorder,
-                                width: 2,
-                              ),
-                            ),
-                            // focusedBorder: OutlineInputBorder(
-                            //   borderSide: BorderSide(
-                            //     color: AppColor.textFeildBorder,
-                            //     width: 2,
-                            //   ),
-                            // ),
-                          ),
-                          keyboardType: TextInputType.phone,
-                          validator: (value) {
-                            value = value?.replaceAll(" ", "").trim();
-                            if (value == null || value.isEmpty) {
-                              return "Please enter a phone number";
-                            }
-                            if (!RegExp(r'^[0-9]{10,}$').hasMatch(value)) {
-                              return "Ph no: at least 10 number long (digits only)";
-                            }
-                            return null;
-                          },
-                          onSaved: (newValue) {
-                            registerForm.phoneNumber = newValue;
-                          },
-                          focusNode: registerForm.phoneNumberFocus,
                           textInputAction: TextInputAction.next,
                           onFieldSubmitted: (value) {
                             FocusScope.of(
@@ -227,12 +177,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 width: 2,
                               ),
                             ),
-                            // focusedBorder: OutlineInputBorder(
-                            //   borderSide: BorderSide(
-                            //     color: AppColor.textFeildBorder,
-                            //     width: 2,
-                            //   ),
-                            // ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: AppColor.textFeildBorder,
+                                width: 2,
+                              ),
+                            ),
                           ),
                           obscureText: registerForm.obscurePassword,
                           validator: (value) {
@@ -299,12 +249,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 width: 2,
                               ),
                             ),
-                            // focusedBorder: OutlineInputBorder(
-                            //   borderSide: BorderSide(
-                            //     color: AppColor.textFeildBorder,
-                            //     width: 2,
-                            //   ),
-                            // ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: AppColor.textFeildBorder,
+                                width: 2,
+                              ),
+                            ),
                           ),
                           obscureText: registerForm.obscurePassword,
                           validator: (value) {
