@@ -21,8 +21,8 @@ class _HomeScreenState extends State<HomeScreen> {
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
-        backgroundColor: AppColor.appbarHome,
-        foregroundColor: AppColor.appbarHomeText,
+        backgroundColor: AppColor.homeAppbar,
+        foregroundColor: AppColor.homeAppbarText,
         actions: [
           IconButton(
             onPressed: () {
@@ -31,6 +31,46 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: Icon(theme.isDark ? Icons.brightness_2 : Icons.brightness_6),
           ),
         ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            UserAccountsDrawerHeader(
+              decoration: BoxDecoration(color: AppColor.accountHeader),
+              accountName: Text("Muhammed Aflah A"),
+              accountEmail: Text("aflahathimannil@gmail.com"),
+              currentAccountPicture: CircleAvatar(),
+            ),
+            ListTile(
+              leading: Icon(Icons.person, color: AppColor.personIcon),
+              title: Text(
+                "Profile",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  fontStyle: FontStyle.italic,
+                ),
+              ),
+              onTap: () {
+                Navigator.pushNamed(context, "profile");
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.settings, color: AppColor.settingsIcon),
+              title: Text(
+                "Settings",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  fontStyle: FontStyle.italic,
+                ),
+              ),
+              onTap: () {
+                Navigator.pushNamed(context, "settings");
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -5,7 +5,9 @@ import 'package:the_app/notifier/register_provider.dart';
 import 'package:the_app/notifier/theme_provider.dart';
 import 'package:the_app/view/home_screen.dart';
 import 'package:the_app/view/login_screen.dart';
+import 'package:the_app/view/profile.dart';
 import 'package:the_app/view/register_screen.dart';
+import 'package:the_app/view/settings.dart';
 import 'package:the_app/view/welcome_screen.dart';
 
 void main() async {
@@ -42,6 +44,8 @@ class _MyAppState extends State<MyApp> {
         "login_screen": (context) => LoginScreen(),
         "register_screen": (context) => RegisterScreen(),
         "home_screen": (context) => HomeScreen(),
+        "profile": (context) => Profile(),
+        "settings": (context) => Settings(),
       },
     );
   }

@@ -11,13 +11,15 @@ class AppColor {
   static const progressIndicator = Colors.white;
   static const loginText = Colors.white;
   static const textFeildColor = Colors.white;
-  static const textFeildHint = Colors.grey;
+  static const textFeildHint = Colors.black;
   static const visibilityButton = Colors.grey;
   static const textFeildBorder = Colors.black;
   static const registerText = Colors.white;
   static const personIcon = Colors.blue;
   static const mailIcon = Colors.red;
   static const lockIcon = Colors.pink;
-  static const appbarHome = Color(0xFF37353E);
-  static const appbarHomeText = Colors.white;
+  static const homeAppbar = Color(0xFF37353E);
+  static const homeAppbarText = Colors.white;
+  static const accountHeader = Color(0xFF37353E);
+  static const settingsIcon = Colors.grey;
 }
