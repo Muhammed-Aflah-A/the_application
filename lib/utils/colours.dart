@@ -18,6 +18,6 @@ class AppColor {
   static const personIcon = Colors.blue;
   static const mailIcon = Colors.red;
   static const lockIcon = Colors.pink;
-  static const appbarHome = Colors.black;
+  static const appbarHome = Color(0xFF37353E);
   static const appbarHomeText = Colors.white;
 }
