@@ -151,7 +151,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 registerForm.obscurePassword
                                     ? Icons.visibility_off
                                     : Icons.visibility,
-                                color: AppColor.visibilityButton,
+                                color: AppColor.visibilityIcon,
                               ),
                               onPressed: () {
                                 registerForm.passVisibility();
@@ -219,7 +219,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 registerForm.obscurePassword
                                     ? Icons.visibility_off
                                     : Icons.visibility,
-                                color: AppColor.visibilityButton,
+                                color: AppColor.visibilityIcon,
                               ),
                               onPressed: () {
                                 registerForm.passVisibility();

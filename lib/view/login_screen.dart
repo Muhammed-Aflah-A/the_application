@@ -106,7 +106,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 loginForm.obscurePassword
                                     ? Icons.visibility_off
                                     : Icons.visibility,
-                                color: AppColor.visibilityButton,
+                                color: AppColor.visibilityIcon,
                               ),
                               onPressed: () {
                                 loginForm.passVisibility();
