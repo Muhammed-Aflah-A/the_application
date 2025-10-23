@@ -89,6 +89,7 @@ class _Page1State extends State<Page1> {
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
+                          color: AppColor.normalText_2,
                         ),
                       ),
                       SizedBox(height: 10),
@@ -97,6 +98,7 @@ class _Page1State extends State<Page1> {
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
+                          color: AppColor.normalText_2,
                         ),
                       ),
                     ],
@@ -119,6 +121,7 @@ class _Page1State extends State<Page1> {
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
+                          color: AppColor.normalText_2,
                         ),
                       ),
                       SizedBox(width: 10),
@@ -127,6 +130,7 @@ class _Page1State extends State<Page1> {
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
+                          color: AppColor.normalText_2,
                         ),
                       ),
                     ],
@@ -143,7 +147,11 @@ class _Page1State extends State<Page1> {
                 child: Center(
                   child: Text(
                     "Count = $num",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                      color: AppColor.normalText_2,
+                    ),
                   ),
                 ),
               ),

@@ -9,7 +9,7 @@ class Page2 extends StatefulWidget {
 }
 
 class _Page2State extends State<Page2> {
-  String? backMessage;
+  String backMessage = "Nothing";
   @override
   Widget build(BuildContext context) {
     return Scaffold(

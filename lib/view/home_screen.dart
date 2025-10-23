@@ -15,7 +15,6 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final theme = context.watch<ThemeProvider>();
     return Scaffold(
-      backgroundColor: AppColor.homeBg,
       appBar: AppBar(
         title: Text(
           "HomeScreen",
@@ -44,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   fontStyle: FontStyle.italic,
                 ),
               ),
-              leading: Icon(Icons.person, color: AppColor.personIcon),
+              leading: Icon(Icons.person, color: AppColor.personIcon2),
               onTap: () {
                 Navigator.pushNamed(context, "profile");
               },
@@ -119,6 +118,24 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 onTap: () {
                   Navigator.pushNamed(context, "flutter_navigation");
+                },
+                trailing: Icon(Icons.more_horiz, color: AppColor.moreIconHoriz),
+              ),
+            ),
+            Card(
+              elevation: 2,
+              color: AppColor.cardColor,
+              child: ListTile(
+                leading: Icon(Icons.pages, color: AppColor.pageIcon),
+                title: Text(
+                  "Form validation",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: AppColor.normalText,
+                  ),
+                ),
+                onTap: () {
+                  Navigator.pushNamed(context, "form_validation");
                 },
                 trailing: Icon(Icons.more_horiz, color: AppColor.moreIconHoriz),
               ),

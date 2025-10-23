@@ -13,9 +13,10 @@ class AppColor {
   //Icon Colors -
   static const welcomeIcon = Colors.white;
   static const progressIndicator = Colors.white;
-  static const personIcon = Colors.blue;
-  static const mailIcon = Colors.red;
-  static const lockIcon = Colors.pink;
+  static const personIcon = Colors.black;
+  static const personIcon2 = Colors.blue;
+  static const mailIcon = Colors.black;
+  static const lockIcon = Colors.black;
   static const visibilityIcon = Colors.grey;
   static const themeIcon = Colors.amber;
   static const settingsIcon = Colors.grey;
@@ -29,7 +30,6 @@ class AppColor {
   static const textFeildBorder = Colors.black;
   static const buttonColor = Color(0xFFD3DAD9);
   //Feild Colors -
-  static const homeBg = Color(0xFF44444E);
   static const appbar = Color(0xFF37353E);
   static const accountHeader = Color(0xFF37353E);
   static const cardColor = Color(0xFF715A5A);
