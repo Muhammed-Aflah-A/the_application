@@ -105,6 +105,24 @@ class _HomeScreenState extends State<HomeScreen> {
                 trailing: Icon(Icons.more_horiz, color: AppColor.moreIconHoriz),
               ),
             ),
+            Card(
+              elevation: 2,
+              color: AppColor.cardColor,
+              child: ListTile(
+                leading: Icon(Icons.pages, color: AppColor.pageIcon),
+                title: Text(
+                  "Flutter navigation",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: AppColor.normalText,
+                  ),
+                ),
+                onTap: () {
+                  Navigator.pushNamed(context, "flutter_navigation");
+                },
+                trailing: Icon(Icons.more_horiz, color: AppColor.moreIconHoriz),
+              ),
+            ),
           ],
         ),
       ),
