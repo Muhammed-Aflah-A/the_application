@@ -40,6 +40,7 @@ class _Page1State extends State<Page1> {
         mainAxisSize: MainAxisSize.min,
         children: [
           FloatingActionButton(
+            heroTag: 'increment',
             backgroundColor: AppColor.buttonColor,
             foregroundColor: Colors.black,
             shape: RoundedRectangleBorder(
@@ -53,6 +54,7 @@ class _Page1State extends State<Page1> {
           ),
           SizedBox(height: 10),
           FloatingActionButton(
+            heroTag: 'decrement',
             backgroundColor: AppColor.buttonColor,
             foregroundColor: Colors.black,
             shape: RoundedRectangleBorder(

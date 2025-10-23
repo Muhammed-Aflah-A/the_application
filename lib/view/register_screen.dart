@@ -267,12 +267,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               registerForm.formKey.currentState!.save();
                               registerForm.passwordController.clear();
                               registerForm.formKey.currentState!.reset();
-
-                              Navigator.pushNamedAndRemoveUntil(
-                                context,
-                                "home_screen",
-                                (route) => false,
-                              );
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
                                   content: Text(
@@ -283,6 +277,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                   ),
                                   backgroundColor: Colors.green,
                                 ),
+                              );
+                              Navigator.pushNamedAndRemoveUntil(
+                                context,
+                                "home_screen",
+                                (route) => false,
                               );
                             }
                           },

@@ -163,11 +163,6 @@ class _LoginScreenState extends State<LoginScreen> {
                             if (loginForm.formKey.currentState!.validate()) {
                               loginForm.formKey.currentState!.save();
                               loginForm.formKey.currentState!.reset();
-                              Navigator.pushNamedAndRemoveUntil(
-                                context,
-                                "home_screen",
-                                (route) => false,
-                              );
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
                                   content: Text(
@@ -178,6 +173,11 @@ class _LoginScreenState extends State<LoginScreen> {
                                   ),
                                   backgroundColor: Colors.green,
                                 ),
+                              );
+                              Navigator.pushNamedAndRemoveUntil(
+                                context,
+                                "home_screen",
+                                (route) => false,
                               );
                             }
                           },
