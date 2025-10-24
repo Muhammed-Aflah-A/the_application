@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:the_app/service/theme_preference.dart';
+import 'package:the_app/utils/theme_preference.dart';
 
 class ThemeProvider with ChangeNotifier {
   var theme = ToggleTheme();
