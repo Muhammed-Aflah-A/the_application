@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:the_app/utils/colours.dart';
 
 class Page3 extends StatefulWidget {
@@ -14,6 +15,10 @@ class _Page3State extends State<Page3> {
   String? maritalStatus;
   bool theme = false;
   double currentValue = 0;
+  final dobController = TextEditingController();
+  final timeController = TextEditingController();
+  String? date;
+  String? time;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -187,6 +192,77 @@ class _Page3State extends State<Page3> {
                               inactiveColor: Colors.grey,
                             ),
                             SizedBox(height: 10),
+                            TextFormField(
+                              controller: dobController,
+                              decoration: InputDecoration(
+                                filled: true,
+                                labelText: "Date of birth",
+                                prefixIcon: Icon(Icons.calendar_today),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Colors.black,
+                                    width: 3,
+                                  ),
+                                ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Colors.black,
+                                    width: 3,
+                                  ),
+                                ),
+                              ),
+                              readOnly: true,
+                              onTap: () async {
+                                DateTime? picked = await showDatePicker(
+                                  context: context,
+                                  initialDate: DateTime(2000, 1, 1),
+                                  firstDate: DateTime(1975),
+                                  lastDate: DateTime.now(),
+                                );
+                                if (picked != null) {
+                                  setState(() {
+                                    date = DateFormat(
+                                      "EEEE, dd-MMM-yyyy",
+                                    ).format(picked);
+                                    dobController.text = date!;
+                                  });
+                                }
+                              },
+                            ),
+                            SizedBox(height: 10),
+                            TextFormField(
+                              controller: timeController,
+                              decoration: InputDecoration(
+                                filled: true,
+                                labelText: "Time",
+                                prefixIcon: Icon(Icons.calendar_today),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Colors.black,
+                                    width: 3,
+                                  ),
+                                ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Colors.black,
+                                    width: 3,
+                                  ),
+                                ),
+                              ),
+                              readOnly: true,
+                              onTap: () async {
+                                TimeOfDay? picked = await showTimePicker(
+                                  context: context,
+                                  initialTime: TimeOfDay.now(),
+                                );
+                                if (picked != null) {
+                                  setState(() {
+                                    time = picked.format(context);
+                                    timeController.text = time!;
+                                  });
+                                }
+                              },
+                            ),
                           ],
                         ),
                       ),
