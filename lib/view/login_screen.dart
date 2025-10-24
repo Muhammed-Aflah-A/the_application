@@ -189,25 +189,35 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           child: Text("SIGN IN"),
                         ),
-                        SizedBox(height: 5),
-                        Divider(
-                          thickness: 5,
-                          indent: 25,
-                          endIndent: 25,
-                          color: Colors.grey,
-                        ),
-                        SizedBox(height: 5),
-                        ElevatedButton(
-                          onPressed: () {
-                            Navigator.pushNamed(context, "register_screen");
-                          },
-                          style: ElevatedButton.styleFrom(
-                            foregroundColor: Colors.black,
-                            backgroundColor: Colors.white,
-                            side: BorderSide(color: Colors.black, width: 3),
-                            minimumSize: Size(300, 50),
-                          ),
-                          child: Text("SIGN UP"),
+                        SizedBox(height: 15),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Dont have an account ?",
+                              style: TextStyle(
+                                color: AppColor.normalText,
+                                fontSize: 14,
+                              ),
+                            ),
+                            SizedBox(width: 5),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.pushNamed(context, "register_screen");
+                              },
+                              child: Text(
+                                "Sign up",
+                                style: TextStyle(
+                                  color: AppColor.normalText,
+                                  decoration: TextDecoration.underline,
+                                  decorationColor: AppColor.underlineColor,
+                                  decorationThickness: 2,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),

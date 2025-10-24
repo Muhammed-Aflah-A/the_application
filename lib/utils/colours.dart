@@ -29,6 +29,7 @@ class AppColor {
   static const textFeildHint = Colors.black;
   static const textFeildBorder = Colors.black;
   static const buttonColor = Color(0xFFD3DAD9);
+  static const underlineColor = Color(0xFFD3DAD9);
   //Feild Colors -
   static const appbar = Color(0xFF37353E);
   static const accountHeader = Color(0xFF37353E);
