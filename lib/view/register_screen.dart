@@ -47,6 +47,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                         SizedBox(height: 10),
                         TextFormField(
+                          style: TextStyle(color: AppColor.textFeildForeground),
                           decoration: InputDecoration(
                             hintText: "Full Name",
                             hintStyle: TextStyle(color: AppColor.textFeildHint),
@@ -91,6 +92,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                         SizedBox(height: 20),
                         TextFormField(
+                          style: TextStyle(color: AppColor.textFeildForeground),
                           decoration: InputDecoration(
                             hintText: "Gmail",
                             hintStyle: TextStyle(color: AppColor.textFeildHint),
@@ -139,6 +141,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                         SizedBox(height: 20),
                         TextFormField(
+                          style: TextStyle(color: AppColor.textFeildForeground),
                           decoration: InputDecoration(
                             hintText: "Password",
                             hintStyle: TextStyle(color: AppColor.textFeildHint),
@@ -206,6 +209,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                         SizedBox(height: 20),
                         TextFormField(
+                          style: TextStyle(color: AppColor.textFeildForeground),
                           controller: registerForm.passwordController,
                           decoration: InputDecoration(
                             hintText: "Confirm password",

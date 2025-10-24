@@ -47,6 +47,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         SizedBox(height: 10),
                         TextFormField(
+                          style: TextStyle(color: AppColor.textFeildForeground),
                           decoration: InputDecoration(
                             hintText: "Email",
                             hintStyle: TextStyle(color: AppColor.textFeildHint),
@@ -94,6 +95,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         SizedBox(height: 20),
                         TextFormField(
+                          style: TextStyle(color: AppColor.textFeildForeground),
                           decoration: InputDecoration(
                             hintText: "Password",
                             hintStyle: TextStyle(color: AppColor.textFeildHint),

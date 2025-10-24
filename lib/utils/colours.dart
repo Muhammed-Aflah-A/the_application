@@ -28,6 +28,7 @@ class AppColor {
   static const textFeildColor = Colors.white;
   static const textFeildHint = Colors.black;
   static const textFeildBorder = Colors.black;
+  static const textFeildForeground = Colors.black;
   static const buttonColor = Color(0xFFD3DAD9);
   static const underlineColor = Color(0xFFD3DAD9);
   //Feild Colors -
