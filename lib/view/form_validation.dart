@@ -41,7 +41,11 @@ class _Page3State extends State<Page3> {
                 child: Container(
                   margin: EdgeInsets.all(20),
                   padding: EdgeInsets.all(20),
-                  color: Colors.blue[50],
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.grey, width: 3),
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.blue[50],
+                  ),
                   width: double.infinity,
                   child: Column(
                     children: [
@@ -78,7 +82,7 @@ class _Page3State extends State<Page3> {
                           ),
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
-                              color: Colors.black,
+                              color: Colors.grey,
                               width: 3,
                             ),
                           ),
@@ -157,13 +161,13 @@ class _Page3State extends State<Page3> {
                                 prefixIcon: Icon(Icons.list),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
-                                    color: Colors.black,
+                                    color: Colors.grey,
                                     width: 3,
                                   ),
                                 ),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
-                                    color: Colors.black,
+                                    color: Colors.grey,
                                     width: 3,
                                   ),
                                 ),
@@ -200,13 +204,13 @@ class _Page3State extends State<Page3> {
                                 prefixIcon: Icon(Icons.calendar_today),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
-                                    color: Colors.black,
+                                    color: Colors.grey,
                                     width: 3,
                                   ),
                                 ),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
-                                    color: Colors.black,
+                                    color: Colors.grey,
                                     width: 3,
                                   ),
                                 ),
@@ -238,13 +242,13 @@ class _Page3State extends State<Page3> {
                                 prefixIcon: Icon(Icons.calendar_today),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
-                                    color: Colors.black,
+                                    color: Colors.grey,
                                     width: 3,
                                   ),
                                 ),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
-                                    color: Colors.black,
+                                    color: Colors.grey,
                                     width: 3,
                                   ),
                                 ),

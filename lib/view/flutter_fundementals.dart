@@ -44,7 +44,7 @@ class _Page1State extends State<Page1> {
             backgroundColor: AppColor.buttonColor,
             foregroundColor: Colors.black,
             shape: RoundedRectangleBorder(
-              side: BorderSide(color: Colors.black, width: 3),
+              side: BorderSide(color: Colors.grey, width: 3),
               borderRadius: BorderRadius.circular(10),
             ),
             onPressed: () {
@@ -58,7 +58,7 @@ class _Page1State extends State<Page1> {
             backgroundColor: AppColor.buttonColor,
             foregroundColor: Colors.black,
             shape: RoundedRectangleBorder(
-              side: BorderSide(color: Colors.black, width: 3),
+              side: BorderSide(color: Colors.grey, width: 3),
               borderRadius: BorderRadius.circular(10),
             ),
             onPressed: () {
@@ -76,7 +76,7 @@ class _Page1State extends State<Page1> {
               Container(
                 margin: EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  border: Border.all(width: 3),
+                  border: Border.all(color: Colors.grey, width: 3),
                   borderRadius: BorderRadius.circular(10),
                   color: Colors.amber[50],
                 ),
@@ -108,7 +108,7 @@ class _Page1State extends State<Page1> {
               Container(
                 margin: EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  border: Border.all(width: 3),
+                  border: Border.all(color: Colors.grey, width: 3),
                   borderRadius: BorderRadius.circular(10),
                   color: Colors.blue[50],
                 ),
@@ -140,7 +140,7 @@ class _Page1State extends State<Page1> {
               Container(
                 margin: EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  border: Border.all(width: 3),
+                  border: Border.all(color: Colors.grey, width: 3),
                   borderRadius: BorderRadius.circular(10),
                   color: Colors.blueGrey[50],
                 ),
