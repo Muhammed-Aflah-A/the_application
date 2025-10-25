@@ -32,7 +32,11 @@ class _HomeScreenState extends State<HomeScreen> {
               decoration: BoxDecoration(color: AppColor.accountHeader),
               accountName: Text("Muhammed Aflah A"),
               accountEmail: Text("aflahathimannil@gmail.com"),
-              currentAccountPicture: CircleAvatar(),
+              currentAccountPicture: Icon(
+                Icons.account_circle,
+                color: AppColor.personIcon3,
+                size: 60,
+              ),
             ),
             ListTile(
               title: Text(
@@ -101,7 +105,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 onTap: () {
                   Navigator.pushNamed(context, "flutter_fundementals");
                 },
-                trailing: Icon(Icons.more_horiz, color: AppColor.moreIconHoriz),
+                trailing: Icon(
+                  Icons.more_horiz,
+                  color: AppColor.horizontalMoreIcon,
+                ),
               ),
             ),
             Card(
@@ -119,7 +126,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 onTap: () {
                   Navigator.pushNamed(context, "flutter_navigation");
                 },
-                trailing: Icon(Icons.more_horiz, color: AppColor.moreIconHoriz),
+                trailing: Icon(
+                  Icons.more_horiz,
+                  color: AppColor.horizontalMoreIcon,
+                ),
               ),
             ),
             Card(
@@ -137,7 +147,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 onTap: () {
                   Navigator.pushNamed(context, "form_validation");
                 },
-                trailing: Icon(Icons.more_horiz, color: AppColor.moreIconHoriz),
+                trailing: Icon(
+                  Icons.more_horiz,
+                  color: AppColor.horizontalMoreIcon,
+                ),
               ),
             ),
           ],

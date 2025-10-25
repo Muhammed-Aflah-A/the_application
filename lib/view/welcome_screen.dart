@@ -45,7 +45,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   text: TextSpan(
                     text: "Welcome ",
                     style: const TextStyle(
-                      color: AppColor.welcomeText_1,
+                      color: AppColor.welcomeText,
                       fontSize: 45,
                       fontWeight: FontWeight.bold,
                       fontStyle: FontStyle.italic,
@@ -55,7 +55,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       TextSpan(
                         text: "Page",
                         style: TextStyle(
-                          color: AppColor.welcomeText_2,
+                          color: AppColor.welcomeText,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -65,7 +65,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 SizedBox(height: 20),
                 Text(
                   "Let's get started!",
-                  style: TextStyle(color: AppColor.welcomeText_3, fontSize: 18),
+                  style: TextStyle(
+                    color: AppColor.welcomeTextCaption,
+                    fontSize: 18,
+                  ),
                 ),
                 SizedBox(height: 50),
                 CircularProgressIndicator(

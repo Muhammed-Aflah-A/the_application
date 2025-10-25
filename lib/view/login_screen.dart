@@ -42,7 +42,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           style: TextStyle(
                             fontFamily: "LoginText2",
                             fontSize: 50,
-                            color: AppColor.loginText,
+                            color: AppColor.signInText,
                           ),
                         ),
                         SizedBox(height: 10),
@@ -184,9 +184,9 @@ class _LoginScreenState extends State<LoginScreen> {
                             }
                           },
                           style: ElevatedButton.styleFrom(
-                            foregroundColor: Colors.black,
-                            backgroundColor: Colors.white,
-                            side: BorderSide(color: Colors.black, width: 3),
+                            foregroundColor: AppColor.buttonForeground,
+                            backgroundColor: AppColor.buttonBg,
+                            side: BorderSide(color: AppColor.buttonBorder, width: 3),
                             minimumSize: Size(300, 50),
                           ),
                           child: Text("SIGN IN"),

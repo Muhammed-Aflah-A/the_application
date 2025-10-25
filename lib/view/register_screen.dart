@@ -42,7 +42,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           style: TextStyle(
                             fontFamily: "LoginText2",
                             fontSize: 50,
-                            color: AppColor.registerText,
+                            color: AppColor.signUpText,
                           ),
                         ),
                         SizedBox(height: 10),
@@ -290,9 +290,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             }
                           },
                           style: ElevatedButton.styleFrom(
-                            foregroundColor: Colors.black,
-                            backgroundColor: Colors.white,
-                            side: BorderSide(color: Colors.black, width: 3),
+                            foregroundColor: AppColor.buttonForeground,
+                            backgroundColor: AppColor.buttonBg,
+                            side: BorderSide(
+                              color: AppColor.buttonBorder,
+                              width: 3,
+                            ),
                             minimumSize: Size(300, 50),
                           ),
                           child: Text("Register"),
@@ -310,9 +313,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             Navigator.pop(context);
                           },
                           style: ElevatedButton.styleFrom(
-                            foregroundColor: Colors.black,
-                            backgroundColor: Colors.white,
-                            side: BorderSide(color: Colors.black, width: 3),
+                            foregroundColor: AppColor.buttonForeground,
+                            backgroundColor: AppColor.buttonBg,
+                            side: BorderSide(
+                              color: AppColor.buttonBorder,
+                              width: 3,
+                            ),
                             minimumSize: Size(300, 50),
                           ),
                           child: Text("Go back"),
