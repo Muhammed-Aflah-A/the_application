@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:the_app/notifier/login_provider.dart';
 import 'package:the_app/notifier/register_provider.dart';
 import 'package:the_app/notifier/theme_provider.dart';
+import 'package:the_app/view/android_fundementals.dart';
 import 'package:the_app/view/flutter_fundementals.dart';
 import 'package:the_app/view/flutter_navigation.dart';
 import 'package:the_app/view/flutter_navigation_2.dart';
@@ -54,6 +55,7 @@ class _MyAppState extends State<MyApp> {
         "flutter_navigation": (context) => Page2(),
         "flutter_navigation_2": (context) => DataReciever(),
         "form_validation": (context) => Page3(),
+        "android_fundementals": (context) => Page4(),
       },
     );
   }

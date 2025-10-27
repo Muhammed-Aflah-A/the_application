@@ -26,7 +26,7 @@ class _Page3State extends State<Page3> {
         backgroundColor: AppColor.appbar,
         foregroundColor: AppColor.appbarText,
         title: Text(
-          "Flutter Navigation",
+          "Form Validation",
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
@@ -191,7 +191,7 @@ class _Page3State extends State<Page3> {
                                 });
                               },
                               divisions: 100,
-                              label: currentValue.toStringAsFixed(0),
+                              label: currentValue.round().toString(),
                               activeColor: Colors.green,
                               inactiveColor: Colors.grey,
                             ),

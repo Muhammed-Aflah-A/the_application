@@ -153,6 +153,27 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
+            Card(
+              elevation: 2,
+              color: AppColor.cardColor,
+              child: ListTile(
+                leading: Icon(Icons.pages, color: AppColor.pageIcon),
+                title: Text(
+                  "Android Fundementals",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: AppColor.normalText,
+                  ),
+                ),
+                onTap: () {
+                  Navigator.pushNamed(context, "android_fundementals");
+                },
+                trailing: Icon(
+                  Icons.more_horiz,
+                  color: AppColor.horizontalMoreIcon,
+                ),
+              ),
+            ),
           ],
         ),
       ),

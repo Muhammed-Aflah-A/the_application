@@ -41,10 +41,10 @@ class _Page1State extends State<Page1> {
         children: [
           FloatingActionButton(
             heroTag: 'increment',
+            foregroundColor: AppColor.buttonForeground,
             backgroundColor: AppColor.buttonColor,
-            foregroundColor: Colors.black,
             shape: RoundedRectangleBorder(
-              side: BorderSide(color: Colors.grey, width: 3),
+              side: BorderSide(color: AppColor.buttonBorder_2, width: 3),
               borderRadius: BorderRadius.circular(10),
             ),
             onPressed: () {
@@ -55,10 +55,10 @@ class _Page1State extends State<Page1> {
           SizedBox(height: 10),
           FloatingActionButton(
             heroTag: 'decrement',
+            foregroundColor: AppColor.buttonForeground,
             backgroundColor: AppColor.buttonColor,
-            foregroundColor: Colors.black,
             shape: RoundedRectangleBorder(
-              side: BorderSide(color: Colors.grey, width: 3),
+              side: BorderSide(color: AppColor.buttonBorder_2, width: 3),
               borderRadius: BorderRadius.circular(10),
             ),
             onPressed: () {

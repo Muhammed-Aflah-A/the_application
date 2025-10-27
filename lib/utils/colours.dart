@@ -38,6 +38,7 @@ class AppColor {
   static const buttonForeground = Colors.black;
   static const buttonBg = Colors.white;
   static const buttonBorder = Colors.black;
+  static const buttonBorder_2 = Colors.grey;
   static const buttonColor = Color(0xFFD3DAD9);
 
   //Styling Colors -
