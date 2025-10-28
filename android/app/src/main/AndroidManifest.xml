@@ -5,7 +5,7 @@
     <application
         android:label="My App"
         android:name="${applicationName}"
-        android:icon="pink_letter">
+        android:icon="@mipmap/pink_letter">
         <activity
             android:name=".MainActivity"
             android:exported="true"

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:the_app/notifier/permission_provider.dart';
 import 'package:the_app/notifier/login_provider.dart';
 import 'package:the_app/notifier/register_provider.dart';
 import 'package:the_app/notifier/theme_provider.dart';
@@ -22,6 +23,7 @@ void main() async {
         ChangeNotifierProvider(create: (context) => ThemeProvider()),
         ChangeNotifierProvider(create: (context) => FormProvider()),
         ChangeNotifierProvider(create: (context) => RegisterProvider()),
+        ChangeNotifierProvider(create: (context) => PermissionProvider()),
       ],
       child: MyApp(),
     ),

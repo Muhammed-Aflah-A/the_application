@@ -28,6 +28,7 @@ class AppColor {
   //Text Colors -
   static const normalText = Colors.white;
   static const normalText_2 = Colors.black;
+  static const alertText = Colors.red;
   static const welcomeText = Colors.white;
   static final welcomeTextCaption = Colors.white.withAlpha(150);
   static const signInText = Colors.white;
@@ -43,6 +44,8 @@ class AppColor {
 
   //Styling Colors -
   static const underlineColor = Color(0xFFD3DAD9);
+  static const scaffoldColor = Colors.green;
+  static const scaffoldColor_2 = Colors.red;
 
   //Feild Colors -
   static const appbar = Color(0xFF222831);
