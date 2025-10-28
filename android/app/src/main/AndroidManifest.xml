@@ -3,9 +3,9 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:label="the_app"
+        android:label="My App"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="pink_letter">
         <activity
             android:name=".MainActivity"
             android:exported="true"
