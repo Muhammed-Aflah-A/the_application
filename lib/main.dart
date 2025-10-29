@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
+import 'package:the_app/db/hive_db.dart';
+import 'package:the_app/model/hive_user.dart';
 import 'package:the_app/notifier/permission_provider.dart';
 import 'package:the_app/notifier/login_provider.dart';
 import 'package:the_app/notifier/register_provider.dart';
 import 'package:the_app/notifier/theme_provider.dart';
+import 'package:the_app/storage/secure_storage.dart';
 import 'package:the_app/view/android_fundementals.dart';
 import 'package:the_app/view/flutter_fundementals.dart';
 import 'package:the_app/view/flutter_navigation.dart';
@@ -17,12 +21,18 @@ import 'package:the_app/view/settings.dart';
 import 'package:the_app/view/welcome_screen.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+  Hive.registerAdapter(HiveUserAdapter());
+  await HiveDb.init();
   runApp(
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => ThemeProvider()),
         ChangeNotifierProvider(create: (context) => FormProvider()),
-        ChangeNotifierProvider(create: (context) => RegisterProvider()),
+        ChangeNotifierProvider(
+          create: (context) => RegisterProvider(hiveService: HiveDb(),secureStorage: SecureStorage()),
+        ),
         ChangeNotifierProvider(create: (context) => PermissionProvider()),
       ],
       child: MyApp(),

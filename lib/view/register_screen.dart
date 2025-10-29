@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:the_app/model/hive_user.dart';
 import 'package:the_app/notifier/register_provider.dart';
 import 'package:the_app/utils/colours.dart';
 
@@ -266,9 +267,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                         SizedBox(height: 20),
                         ElevatedButton(
-                          onPressed: () {
+                          onPressed: () async {
                             if (registerForm.formKey.currentState!.validate()) {
                               registerForm.formKey.currentState!.save();
+                              final user = HiveUser(
+                                fullName: registerForm.fullName,
+                                gmail: registerForm.gmail,
+                              );
+                              await context.read<RegisterProvider>().addUser(
+                                user,
+                                registerForm.confirmPassword!,
+                              );
                               registerForm.passwordController.clear();
                               registerForm.formKey.currentState!.reset();
                               ScaffoldMessenger.of(context).showSnackBar(
