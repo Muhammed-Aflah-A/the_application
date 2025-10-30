@@ -31,7 +31,7 @@ void main() async {
         ChangeNotifierProvider(create: (context) => ThemeProvider()),
         ChangeNotifierProvider(create: (context) => FormProvider()),
         ChangeNotifierProvider(
-          create: (context) => RegisterProvider(hiveService: HiveDb(),secureStorage: SecureStorage()),
+          create: (context) => RegisterProvider(serviceLayer: HiveDb(),secureStorage: SecureStorage()),
         ),
         ChangeNotifierProvider(create: (context) => PermissionProvider()),
       ],

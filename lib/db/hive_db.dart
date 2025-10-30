@@ -1,8 +1,8 @@
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:the_app/model/hive_user.dart';
-import 'package:the_app/service/hive_service.dart';
+import 'package:the_app/service/service_confiq.dart';
 
-class HiveDb implements HiveService {
+class HiveDb implements ServiceLayer {
   static const String boxName = "UserDataBox";
   static Future<void> init() async {
     if (!Hive.isBoxOpen(boxName)) {
