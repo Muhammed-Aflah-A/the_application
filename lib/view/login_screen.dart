@@ -170,34 +170,40 @@ class _LoginScreenState extends State<LoginScreen> {
                         ElevatedButton(
                           onPressed: () {
                             FocusScope.of(context).unfocus();
-                            Future.delayed(const Duration(seconds: 1), () {
-                              if (loginForm.formKey.currentState!.validate()) {
-                                loginForm.formKey.currentState!.save();
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text(
-                                      "Login Successfull",
-                                      style: TextStyle(
-                                        color: AppColor.normalText,
+                            Future.delayed(
+                              const Duration(milliseconds: 300),
+                              () {
+                                if (loginForm.formKey.currentState!
+                                    .validate()) {
+                                  loginForm.formKey.currentState!.save();
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: Text(
+                                        "Login Successfull",
+                                        style: TextStyle(
+                                          color: AppColor.normalText,
+                                        ),
+                                      ),
+                                      backgroundColor: Colors.green,
+                                      duration: const Duration(
+                                        milliseconds: 300,
                                       ),
                                     ),
-                                    backgroundColor: Colors.green,
-                                    duration: const Duration(seconds: 1),
-                                  ),
-                                );
-                                Future.delayed(
-                                  const Duration(milliseconds: 300),
-                                  () {
-                                    loginForm.formKey.currentState!.reset();
-                                    Navigator.pushNamedAndRemoveUntil(
-                                      context,
-                                      "/home_screen",
-                                      (route) => false,
-                                    );
-                                  },
-                                );
-                              }
-                            });
+                                  );
+                                  Future.delayed(
+                                    const Duration(milliseconds: 300),
+                                    () {
+                                      loginForm.formKey.currentState!.reset();
+                                      Navigator.pushNamedAndRemoveUntil(
+                                        context,
+                                        "/home_screen",
+                                        (route) => false,
+                                      );
+                                    },
+                                  );
+                                }
+                              },
+                            );
                           },
                           style: ElevatedButton.styleFrom(
                             foregroundColor: AppColor.buttonForeground,

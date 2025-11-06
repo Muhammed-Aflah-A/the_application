@@ -271,8 +271,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           onPressed: () async {
                             FocusScope.of(context).unfocus();
                             Future.delayed(
-                              const Duration(seconds: 1),
-                              () async {
+                              const Duration(milliseconds: 300),
+                              () {
                                 if (registerForm.formKey.currentState!
                                     .validate()) {
                                   registerForm.formKey.currentState!.save();
@@ -280,12 +280,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     fullName: registerForm.fullName,
                                     gmail: registerForm.gmail,
                                   );
-                                  await context
-                                      .read<RegisterProvider>()
-                                      .addUser(
-                                        user,
-                                        registerForm.confirmPassword!,
-                                      );
+                                  context.read<RegisterProvider>().addUser(
+                                    user,
+                                    registerForm.confirmPassword!,
+                                  );
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     SnackBar(
                                       content: Text(
@@ -295,6 +293,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                         ),
                                       ),
                                       backgroundColor: Colors.green,
+                                      duration: const Duration(
+                                        milliseconds: 300,
+                                      ),
                                     ),
                                   );
                                   Future.delayed(
