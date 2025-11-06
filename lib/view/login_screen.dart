@@ -13,10 +13,10 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
-    final loginForm = context.watch<FormProvider>();
+    final loginForm = context.watch<LoginProvider>();
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
@@ -30,14 +30,15 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 Form(
                   key: loginForm.formKey,
+                  // autovalidateMode: AutovalidateMode.onUserInteraction,
                   child: Container(
                     width: double.infinity,
-                    margin: EdgeInsets.all(20),
-                    padding: EdgeInsets.all(20),
+                    margin: const EdgeInsets.all(20),
+                    padding: const EdgeInsets.all(20),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text(
+                        const Text(
                           "SIGN IN",
                           style: TextStyle(
                             fontFamily: "LoginText2",
@@ -45,10 +46,10 @@ class _LoginScreenState extends State<LoginScreen> {
                             color: AppColor.signInText,
                           ),
                         ),
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         TextFormField(
                           style: TextStyle(color: AppColor.textFeildForeground),
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             hintText: "Email",
                             hintStyle: TextStyle(color: AppColor.textFeildHint),
                             prefixIcon: Icon(
@@ -93,105 +94,123 @@ class _LoginScreenState extends State<LoginScreen> {
                             ).requestFocus(loginForm.passwordFocus);
                           },
                         ),
-                        SizedBox(height: 20),
-                        TextFormField(
-                          style: TextStyle(color: AppColor.textFeildForeground),
-                          decoration: InputDecoration(
-                            hintText: "Password",
-                            hintStyle: TextStyle(color: AppColor.textFeildHint),
-                            prefixIcon: Icon(
-                              Icons.lock,
-                              color: AppColor.lockIcon,
+                        const SizedBox(height: 20),
+                        Consumer<LoginProvider>(
+                          builder: (context, value, child) => TextFormField(
+                            style: TextStyle(
+                              color: AppColor.textFeildForeground,
                             ),
-                            suffixIcon: IconButton(
-                              icon: Icon(
-                                loginForm.obscurePassword
-                                    ? Icons.visibility_off
-                                    : Icons.visibility,
-                                color: AppColor.visibilityIcon,
+                            decoration: InputDecoration(
+                              hintText: "Password",
+                              hintStyle: TextStyle(
+                                color: AppColor.textFeildHint,
                               ),
-                              onPressed: () {
-                                loginForm.passVisibility();
-                              },
-                            ),
-                            filled: true,
-                            fillColor: AppColor.textFeildColor,
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: AppColor.textFeildBorder,
-                                width: 2,
+                              prefixIcon: Icon(
+                                Icons.lock,
+                                color: AppColor.lockIcon,
+                              ),
+                              suffixIcon: IconButton(
+                                icon: Icon(
+                                  loginForm.obscurePassword
+                                      ? Icons.visibility_off
+                                      : Icons.visibility,
+                                  color: AppColor.visibilityIcon,
+                                ),
+                                onPressed: () {
+                                  loginForm.passVisibility();
+                                },
+                              ),
+                              filled: true,
+                              fillColor: AppColor.textFeildColor,
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: AppColor.textFeildBorder,
+                                  width: 2,
+                                ),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: AppColor.textFeildBorder,
+                                  width: 2,
+                                ),
                               ),
                             ),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: AppColor.textFeildBorder,
-                                width: 2,
-                              ),
-                            ),
+                            obscureText: loginForm.obscurePassword,
+                            validator: (value) {
+                              value = value?.replaceAll(" ", "").trim();
+                              if (value == null || value.isEmpty) {
+                                return "Please enter a password";
+                              }
+                              if (!RegExp(r'^(?=.*[A-Z]).+$').hasMatch(value)) {
+                                return "Include uppercase";
+                              }
+                              if (!RegExp(
+                                r'^(?=.*[@$!%*?&]).+$',
+                              ).hasMatch(value)) {
+                                return "Include special character";
+                              }
+                              if (!RegExp(
+                                r'^[A-Za-z\d@$!%*?&]{8,}$',
+                              ).hasMatch(value)) {
+                                return "Password must be at least 8 characters";
+                              }
+                              return null;
+                            },
+                            onSaved: (newValue) {
+                              loginForm.password = newValue;
+                            },
+                            focusNode: loginForm.passwordFocus,
+                            textInputAction: TextInputAction.done,
+                            onFieldSubmitted: (value) {
+                              FocusScope.of(context).unfocus();
+                            },
                           ),
-                          obscureText: loginForm.obscurePassword,
-                          validator: (value) {
-                            value = value?.replaceAll(" ", "").trim();
-                            if (value == null || value.isEmpty) {
-                              return "Please enter a password";
-                            }
-                            if (!RegExp(r'^(?=.*[A-Z]).+$').hasMatch(value)) {
-                              return "Include uppercase";
-                            }
-                            if (!RegExp(
-                              r'^(?=.*[@$!%*?&]).+$',
-                            ).hasMatch(value)) {
-                              return "Include special character";
-                            }
-                            if (!RegExp(
-                              r'^[A-Za-z\d@$!%*?&]{8,}$',
-                            ).hasMatch(value)) {
-                              return "Password must be at least 8 characters";
-                            }
-                            return null;
-                          },
-                          onSaved: (newValue) {
-                            loginForm.password = newValue;
-                          },
-                          focusNode: loginForm.passwordFocus,
-                          textInputAction: TextInputAction.done,
-                          onFieldSubmitted: (value) {
-                            FocusScope.of(context).unfocus();
-                          },
                         ),
-                        SizedBox(height: 20),
+                        const SizedBox(height: 20),
                         ElevatedButton(
                           onPressed: () {
-                            if (loginForm.formKey.currentState!.validate()) {
-                              loginForm.formKey.currentState!.save();
-                              loginForm.formKey.currentState!.reset();
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  content: Text(
-                                    "Login Successfull",
-                                    style: TextStyle(
-                                      color: AppColor.normalText,
+                            FocusScope.of(context).unfocus();
+                            Future.delayed(const Duration(seconds: 1), () {
+                              if (loginForm.formKey.currentState!.validate()) {
+                                loginForm.formKey.currentState!.save();
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(
+                                      "Login Successfull",
+                                      style: TextStyle(
+                                        color: AppColor.normalText,
+                                      ),
                                     ),
+                                    backgroundColor: Colors.green,
+                                    duration: const Duration(seconds: 1),
                                   ),
-                                  backgroundColor: Colors.green,
-                                ),
-                              );
-                              Navigator.pushNamedAndRemoveUntil(
-                                context,
-                                "home_screen",
-                                (route) => false,
-                              );
-                            }
+                                );
+                                Future.delayed(
+                                  const Duration(milliseconds: 300),
+                                  () {
+                                    loginForm.formKey.currentState!.reset();
+                                    Navigator.pushNamedAndRemoveUntil(
+                                      context,
+                                      "/home_screen",
+                                      (route) => false,
+                                    );
+                                  },
+                                );
+                              }
+                            });
                           },
                           style: ElevatedButton.styleFrom(
                             foregroundColor: AppColor.buttonForeground,
                             backgroundColor: AppColor.buttonBg,
-                            side: BorderSide(color: AppColor.buttonBorder, width: 3),
-                            minimumSize: Size(300, 50),
+                            side: const BorderSide(
+                              color: AppColor.buttonBorder,
+                              width: 3,
+                            ),
+                            minimumSize: const Size(300, 50),
                           ),
-                          child: Text("SIGN IN"),
+                          child: const Text("SIGN IN"),
                         ),
-                        SizedBox(height: 15),
+                        const SizedBox(height: 15),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -202,10 +221,13 @@ class _LoginScreenState extends State<LoginScreen> {
                                 fontSize: 14,
                               ),
                             ),
-                            SizedBox(width: 5),
+                            const SizedBox(width: 5),
                             GestureDetector(
                               onTap: () {
-                                Navigator.pushNamed(context, "register_screen");
+                                Navigator.pushNamed(
+                                  context,
+                                  "/register_screen",
+                                );
                               },
                               child: Text(
                                 "Sign up",

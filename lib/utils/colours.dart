@@ -30,7 +30,7 @@ class AppColor {
   static const normalText_2 = Colors.black;
   static const alertText = Colors.red;
   static const welcomeText = Colors.white;
-  static final welcomeTextCaption = Colors.white.withAlpha(150);
+  static const welcomeTextCaption = Color(0x96FFFFFF);
   static const signInText = Colors.white;
   static const signUpText = Colors.white;
   static const appbarText = Colors.white;

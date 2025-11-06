@@ -10,16 +10,22 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
+  static const _splashDuration = Duration(seconds: 2);
+
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 2), () {
-      Navigator.pushAndRemoveUntil(
+    _navigateToLogin();
+  }
+
+  Future<void> _navigateToLogin() async {
+    await Future.delayed(_splashDuration);
+    if (mounted) {
+      Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => LoginScreen()),
-        (route) => false,
+        MaterialPageRoute(builder: (context) => const LoginScreen()),
       );
-    });
+    }
   }
 
   @override
@@ -38,13 +44,17 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(Icons.waving_hand, size: 80, color: AppColor.welcomeIcon),
-                SizedBox(height: 30),
+                const Icon(
+                  Icons.waving_hand,
+                  size: 80,
+                  color: AppColor.welcomeIcon,
+                ),
+                const SizedBox(height: 30),
                 RichText(
                   textAlign: TextAlign.center,
-                  text: TextSpan(
+                  text: const TextSpan(
                     text: "Welcome ",
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: AppColor.welcomeText,
                       fontSize: 45,
                       fontWeight: FontWeight.bold,
@@ -62,16 +72,16 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     ],
                   ),
                 ),
-                SizedBox(height: 20),
-                Text(
+                const SizedBox(height: 20),
+                const Text(
                   "Let's get started!",
                   style: TextStyle(
                     color: AppColor.welcomeTextCaption,
                     fontSize: 18,
                   ),
                 ),
-                SizedBox(height: 50),
-                CircularProgressIndicator(
+                const SizedBox(height: 50),
+                const CircularProgressIndicator(
                   color: AppColor.progressIndicator,
                   strokeWidth: 5,
                 ),

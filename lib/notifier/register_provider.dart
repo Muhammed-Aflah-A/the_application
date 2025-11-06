@@ -22,8 +22,17 @@ class RegisterProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> addUser(HiveUser user,String password) async {
+  Future<void> addUser(HiveUser user, String password) async {
     await serviceLayer.addUser(user);
     await secureStorage.addPass(user.gmail!, password);
+  }
+
+  @override
+  void dispose() {
+    gmailFocus.dispose();
+    passwordController.dispose();
+    passwordFocus.dispose();
+    confirmPasswordFocus.dispose();
+    super.dispose();
   }
 }
