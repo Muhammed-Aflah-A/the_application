@@ -30,7 +30,7 @@ class _Page1State extends State<Page1> {
       appBar: AppBar(
         backgroundColor: AppColor.appbar,
         foregroundColor: AppColor.appbarText,
-        title: Text(
+        title: const Text(
           "Flutter Fundementals",
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
@@ -116,7 +116,7 @@ class _Page1State extends State<Page1> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
+                      const Text(
                         "Row 1",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
@@ -124,8 +124,8 @@ class _Page1State extends State<Page1> {
                           color: AppColor.normalText_2,
                         ),
                       ),
-                      SizedBox(width: 10),
-                      Text(
+                      const SizedBox(width: 10),
+                      const Text(
                         "Row 2",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
@@ -138,7 +138,7 @@ class _Page1State extends State<Page1> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.all(10),
+                margin: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.grey, width: 3),
                   borderRadius: BorderRadius.circular(10),

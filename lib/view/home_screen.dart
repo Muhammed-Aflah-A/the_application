@@ -16,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
     final theme = context.watch<ThemeProvider>();
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "HomeScreen",
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
@@ -49,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               leading: Icon(Icons.person, color: AppColor.personIcon2),
               onTap: () {
-                Navigator.pushNamed(context, "profile");
+                Navigator.pushNamed(context, "/profile");
               },
             ),
             ListTile(
@@ -80,7 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               leading: Icon(Icons.settings, color: AppColor.settingsIcon),
               onTap: () {
-                Navigator.pushNamed(context, "settings");
+                Navigator.pushNamed(context, "/settings");
               },
             ),
           ],
@@ -103,7 +103,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 onTap: () {
-                  Navigator.pushNamed(context, "flutter_fundementals");
+                  Navigator.pushNamed(context, "/flutter_fundementals");
                 },
                 trailing: Icon(
                   Icons.more_horiz,
@@ -124,7 +124,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 onTap: () {
-                  Navigator.pushNamed(context, "flutter_navigation");
+                  Navigator.pushNamed(context, "/flutter_navigation");
                 },
                 trailing: Icon(
                   Icons.more_horiz,
@@ -145,7 +145,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 onTap: () {
-                  Navigator.pushNamed(context, "form_validation");
+                  Navigator.pushNamed(context, "/form_validation");
                 },
                 trailing: Icon(
                   Icons.more_horiz,
@@ -166,7 +166,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 onTap: () {
-                  Navigator.pushNamed(context, "android_fundementals");
+                  Navigator.pushNamed(context, "/android_fundementals");
                 },
                 trailing: Icon(
                   Icons.more_horiz,
