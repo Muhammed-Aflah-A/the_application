@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class FormProvider with ChangeNotifier {
+class LoginProvider with ChangeNotifier {
   final formKey = GlobalKey<FormState>();
   final gmailFocus = FocusNode();
   final passwordFocus = FocusNode();
@@ -10,5 +10,12 @@ class FormProvider with ChangeNotifier {
   void passVisibility() {
     obscurePassword = !obscurePassword;
     notifyListeners();
+  }
+
+  @override
+  void dispose() {
+    gmailFocus.dispose();
+    passwordFocus.dispose();
+    super.dispose();
   }
 }

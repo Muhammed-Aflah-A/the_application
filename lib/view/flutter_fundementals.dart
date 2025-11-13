@@ -41,8 +41,8 @@ class _Page1State extends State<Page1> {
         children: [
           FloatingActionButton(
             heroTag: 'increment',
+            foregroundColor: AppColor.buttonForeground,
             backgroundColor: AppColor.buttonColor,
-            foregroundColor: Colors.black,
             shape: RoundedRectangleBorder(
               side: const BorderSide(color: Colors.black, width: 3),
               borderRadius: BorderRadius.circular(10),
@@ -55,10 +55,10 @@ class _Page1State extends State<Page1> {
           SizedBox(height: 10),
           FloatingActionButton(
             heroTag: 'decrement',
+            foregroundColor: AppColor.buttonForeground,
             backgroundColor: AppColor.buttonColor,
-            foregroundColor: Colors.black,
             shape: RoundedRectangleBorder(
-              side: BorderSide(color: Colors.black, width: 3),
+              side: BorderSide(color: AppColor.buttonBorder_2, width: 3),
               borderRadius: BorderRadius.circular(10),
             ),
             onPressed: () {
@@ -76,7 +76,7 @@ class _Page1State extends State<Page1> {
               Container(
                 margin: EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  border: Border.all(width: 3),
+                  border: Border.all(color: Colors.grey, width: 3),
                   borderRadius: BorderRadius.circular(10),
                   color: Colors.amber[50],
                 ),
@@ -108,7 +108,7 @@ class _Page1State extends State<Page1> {
               Container(
                 margin: EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  border: Border.all(width: 3),
+                  border: Border.all(color: Colors.grey, width: 3),
                   borderRadius: BorderRadius.circular(10),
                   color: Colors.blue[50],
                 ),
@@ -116,7 +116,7 @@ class _Page1State extends State<Page1> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
+                      const Text(
                         "Row 1",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
@@ -124,8 +124,8 @@ class _Page1State extends State<Page1> {
                           color: AppColor.normalText_2,
                         ),
                       ),
-                      SizedBox(width: 10),
-                      Text(
+                      const SizedBox(width: 10),
+                      const Text(
                         "Row 2",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
@@ -138,9 +138,9 @@ class _Page1State extends State<Page1> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.all(10),
+                margin: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  border: Border.all(width: 3),
+                  border: Border.all(color: Colors.grey, width: 3),
                   borderRadius: BorderRadius.circular(10),
                   color: Colors.blueGrey[50],
                 ),

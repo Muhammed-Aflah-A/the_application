@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:the_app/model/hive_user.dart';
 import 'package:the_app/notifier/register_provider.dart';
 import 'package:the_app/utils/colours.dart';
 
@@ -16,7 +17,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     final registerForm = context.watch<RegisterProvider>();
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
@@ -30,24 +31,26 @@ class _RegisterScreenState extends State<RegisterScreen> {
               children: [
                 Form(
                   key: registerForm.formKey,
+                  // autovalidateMode: AutovalidateMode.onUserInteraction,
                   child: Container(
                     width: double.infinity,
-                    margin: EdgeInsets.all(20),
-                    padding: EdgeInsets.all(20),
+                    margin: const EdgeInsets.all(20),
+                    padding: const EdgeInsets.all(20),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text(
+                        const Text(
                           "SIGN UP",
                           style: TextStyle(
                             fontFamily: "LoginText2",
                             fontSize: 50,
-                            color: AppColor.registerText,
+                            color: AppColor.signUpText,
                           ),
                         ),
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         TextFormField(
-                          decoration: InputDecoration(
+                          style: TextStyle(color: AppColor.textFeildForeground),
+                          decoration: const InputDecoration(
                             hintText: "Full Name",
                             hintStyle: TextStyle(color: AppColor.textFeildHint),
                             prefixIcon: Icon(
@@ -89,9 +92,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             ).requestFocus(registerForm.gmailFocus);
                           },
                         ),
-                        SizedBox(height: 20),
+                        const SizedBox(height: 20),
                         TextFormField(
-                          decoration: InputDecoration(
+                          style: TextStyle(color: AppColor.textFeildForeground),
+                          decoration: const InputDecoration(
                             hintText: "Gmail",
                             hintStyle: TextStyle(color: AppColor.textFeildHint),
                             prefixIcon: Icon(
@@ -137,8 +141,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             ).requestFocus(registerForm.passwordFocus);
                           },
                         ),
-                        SizedBox(height: 20),
+                        const SizedBox(height: 20),
                         TextFormField(
+                          style: TextStyle(color: AppColor.textFeildForeground),
                           decoration: InputDecoration(
                             hintText: "Password",
                             hintStyle: TextStyle(color: AppColor.textFeildHint),
@@ -204,8 +209,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             ).requestFocus(registerForm.confirmPasswordFocus);
                           },
                         ),
-                        SizedBox(height: 20),
+                        const SizedBox(height: 20),
                         TextFormField(
+                          style: TextStyle(color: AppColor.textFeildForeground),
                           controller: registerForm.passwordController,
                           decoration: InputDecoration(
                             hintText: "Confirm password",
@@ -262,38 +268,65 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                         SizedBox(height: 20),
                         ElevatedButton(
-                          onPressed: () {
-                            if (registerForm.formKey.currentState!.validate()) {
-                              registerForm.formKey.currentState!.save();
-                              registerForm.passwordController.clear();
-                              registerForm.formKey.currentState!.reset();
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  content: Text(
-                                    "Account Registered Successfull",
-                                    style: TextStyle(
-                                      color: AppColor.normalText,
+                          onPressed: () async {
+                            FocusScope.of(context).unfocus();
+                            Future.delayed(
+                              const Duration(milliseconds: 300),
+                              () {
+                                if (registerForm.formKey.currentState!
+                                    .validate()) {
+                                  registerForm.formKey.currentState!.save();
+                                  final user = HiveUser(
+                                    fullName: registerForm.fullName,
+                                    gmail: registerForm.gmail,
+                                  );
+                                  context.read<RegisterProvider>().addUser(
+                                    user,
+                                    registerForm.confirmPassword!,
+                                  );
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: Text(
+                                        "Account Registered Successfully",
+                                        style: TextStyle(
+                                          color: AppColor.normalText,
+                                        ),
+                                      ),
+                                      backgroundColor: Colors.green,
+                                      duration: const Duration(
+                                        milliseconds: 300,
+                                      ),
                                     ),
-                                  ),
-                                  backgroundColor: Colors.green,
-                                ),
-                              );
-                              Navigator.pushNamedAndRemoveUntil(
-                                context,
-                                "home_screen",
-                                (route) => false,
-                              );
-                            }
+                                  );
+                                  Future.delayed(
+                                    const Duration(milliseconds: 300),
+                                    () {
+                                      registerForm.passwordController.clear();
+                                      registerForm.formKey.currentState!
+                                          .reset();
+                                      Navigator.pushNamedAndRemoveUntil(
+                                        context,
+                                        "/home_screen",
+                                        (route) => false,
+                                      );
+                                    },
+                                  );
+                                }
+                              },
+                            );
                           },
                           style: ElevatedButton.styleFrom(
-                            foregroundColor: Colors.black,
-                            backgroundColor: Colors.white,
-                            side: BorderSide(color: Colors.black, width: 3),
+                            foregroundColor: AppColor.buttonForeground,
+                            backgroundColor: AppColor.buttonBg,
+                            side: const BorderSide(
+                              color: AppColor.buttonBorder,
+                              width: 3,
+                            ),
                             minimumSize: Size(300, 50),
                           ),
-                          child: Text("Register"),
+                          child: const Text("Register"),
                         ),
-                        SizedBox(height: 5),
+                        const SizedBox(height: 5),
                         Divider(
                           thickness: 5,
                           indent: 25,
@@ -306,12 +339,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             Navigator.pop(context);
                           },
                           style: ElevatedButton.styleFrom(
-                            foregroundColor: Colors.black,
-                            backgroundColor: Colors.white,
-                            side: BorderSide(color: Colors.black, width: 3),
+                            foregroundColor: AppColor.buttonForeground,
+                            backgroundColor: AppColor.buttonBg,
+                            side: BorderSide(
+                              color: AppColor.buttonBorder,
+                              width: 3,
+                            ),
                             minimumSize: Size(300, 50),
                           ),
-                          child: Text("Go back"),
+                          child: const Text("Go back"),
                         ),
                       ],
                     ),
