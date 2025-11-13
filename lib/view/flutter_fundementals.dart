@@ -44,7 +44,7 @@ class _Page1State extends State<Page1> {
             foregroundColor: AppColor.buttonForeground,
             backgroundColor: AppColor.buttonColor,
             shape: RoundedRectangleBorder(
-              side: BorderSide(color: AppColor.buttonBorder_2, width: 3),
+              side: const BorderSide(color: Colors.black, width: 3),
               borderRadius: BorderRadius.circular(10),
             ),
             onPressed: () {
