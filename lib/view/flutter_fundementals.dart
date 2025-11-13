@@ -30,7 +30,7 @@ class _Page1State extends State<Page1> {
       appBar: AppBar(
         backgroundColor: AppColor.appbar,
         foregroundColor: AppColor.appbarText,
-        title: Text(
+        title: const Text(
           "Flutter Fundementals",
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
@@ -44,7 +44,7 @@ class _Page1State extends State<Page1> {
             backgroundColor: AppColor.buttonColor,
             foregroundColor: Colors.black,
             shape: RoundedRectangleBorder(
-              side: BorderSide(color: Colors.black, width: 3),
+              side: const BorderSide(color: Colors.black, width: 3),
               borderRadius: BorderRadius.circular(10),
             ),
             onPressed: () {
